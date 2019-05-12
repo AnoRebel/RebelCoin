@@ -17,7 +17,7 @@ Like SavjeeCoin, I also made a frontend demo for this [here](https://github.com/
 
 
 #### TODO
----
+
 [ ] Add Tests
 
 
