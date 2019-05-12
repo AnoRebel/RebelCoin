@@ -17,6 +17,8 @@ rebelCoin = Blockchain()
 print('1st trans')
 tx1 = Transaction(myWalletAddress, '123456789', 100)
 tx1.signTransaction(priv_key)
+# These try/except blocks are neccessary for now due to a bug i have where
+# there's either an ecdsa error or a key error, but reruning fixes it
 try:
     try:
         rebelCoin.addTransaction(tx1)
@@ -34,6 +36,8 @@ print('2nd trans')
 tx2 = Transaction(myWalletAddress, '987654321', 50)
 tx2.signTransaction(priv_key)
 rebelCoin.addTransaction(tx2)
+# These try/except blocks are neccessary for now due to a bug i have where
+# there's either an ecdsa error or a key error, but reruning fixes it
 try:
     try:
         rebelCoin.addTransaction(tx2)
