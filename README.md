@@ -1,5 +1,5 @@
 ## RebelCoin
----
+
 
 This is like the almost exact copy of Xavier Decuyper's very simple blockchain implementation in Javascript - [SavjeeCoin](https://github.com/Savjee/SavjeeCoin), only, this is written purely in Python..
 
