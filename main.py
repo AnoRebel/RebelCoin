@@ -11,7 +11,7 @@ myWalletAddress = hex(int(str(pub_key.x)+str(pub_key.y)))
 
 # Create new instance of Blockchain class
 print('Initialize coin')
-savjeeCoin = Blockchain()
+rebelCoin = Blockchain()
 
 # Create a transaction & sign it with your key
 print('1st trans')
@@ -19,40 +19,40 @@ tx1 = Transaction(myWalletAddress, '123456789', 100)
 tx1.signTransaction(priv_key)
 try:
     try:
-        savjeeCoin.addTransaction(tx1)
+        rebelCoin.addTransaction(tx1)
     except ecdsa.EcdsaError:
-        savjeeCoin.addTransaction(tx1)
+        rebelCoin.addTransaction(tx1)
 except:
-    savjeeCoin.addTransaction(tx1)
+    rebelCoin.addTransaction(tx1)
 print()
 
 # Mine block
-savjeeCoin.minePendingTransactions(myWalletAddress)
+rebelCoin.minePendingTransactions(myWalletAddress)
 
 # Create second transaction
 print('2nd trans')
 tx2 = Transaction(myWalletAddress, '987654321', 50)
 tx2.signTransaction(priv_key)
-savjeeCoin.addTransaction(tx2)
+rebelCoin.addTransaction(tx2)
 try:
     try:
-        savjeeCoin.addTransaction(tx2)
+        rebelCoin.addTransaction(tx2)
     except ecdsa.EcdsaError:
-        savjeeCoin.addTransaction(tx2)
+        rebelCoin.addTransaction(tx2)
 except:
-    savjeeCoin.addTransaction(tx2)
+    rebelCoin.addTransaction(tx2)
 print()
 
 # Mine block
-savjeeCoin.minePendingTransactions(myWalletAddress)
+rebelCoin.minePendingTransactions(myWalletAddress)
 
 print()
 print('Balance of xavier is ')
-print(savjeeCoin.getBalanceOfAddress(myWalletAddress))
+print(rebelCoin.getBalanceOfAddress(myWalletAddress))
 
 # Uncomment this line if you want to test tampering with the chain
-# savjeeCoin.chain[1].transactions[0].amount = 10
+# rebelCoin.chain[1].transactions[0].amount = 10
 
 # Check if the chain is valid
 print()
-print('Blockchain valid?', 'Yes' if savjeeCoin.isChainValid() == True else 'No')
+print('Blockchain valid?', 'Yes' if rebelCoin.isChainValid() == True else 'No')
